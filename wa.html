@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Conscientemente — WhatsApp</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #F5F0E8;
+      font-family: 'Georgia', serif;
+      color: #2C2C2A;
+    }
+    .msg {
+      text-align: center;
+      padding: 2rem;
+    }
+    .msg p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #4A4A46;
+      margin-top: 0.5rem;
+    }
+    .dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #25D366;
+      animation: pulse 1.2s ease-in-out infinite;
+      margin: 0 3px;
+    }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+  </style>
+</head>
+<body>
+  <div class="msg">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <p>Abriendo WhatsApp…</p>
+  </div>
+  <script>
+    (function(){
+      var p = ['\x35\x34','\x31\x31','\x35\x37\x36\x32','\x38\x38\x30\x39'].join('');
+      var m = encodeURIComponent('Hola, quiero saber m\u00e1s sobre el M\u00e9todo CORE');
+      var url = 'https://wa.me/' + p + '?text=' + m;
+      // Small delay so the page renders before redirect
+      setTimeout(function(){ window.location.replace(url); }, 400);
+    })();
+  </script>
+</body>
+</html>
